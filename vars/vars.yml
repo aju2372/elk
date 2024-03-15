@@ -1,0 +1,58 @@
+#hostname
+elasticsearch_host_name: es.internal-infra360.io
+kibana_host_name: kibana.internal-infra360.io
+logstash_host_name: logstash.internal-infra360.io
+
+#Elasticsearch Bootstrap passwords & Users
+elasticsearch_bootstrap_password: 960HsZSn3odA
+elasticsearch_users:
+  - username: beats_system
+    password: BeXC19u77DuH
+  - username: apm_system
+    password: BNL0CJj404y8
+  - username: kibana_system
+    password: 3W3fdDpO0o7S
+  - username: logstash_system
+    password: 4X1aGL0ec4Ap
+  - username: remote_monitoring_user
+    password: 0Z0yGz59X2Lv
+
+#Kibana
+kibana_version: "8.x"
+kibana_elasticsearch_url: https://es.internal-infra360.io:9200
+server_publicBaseUrl: https://kibana.infra360.io
+elasticsearch_kibana_user: kibana_system
+elasticsearch_kibana_password: 3W3fdDpO0o7S
+elasticsearch_ssl_certificateAuthoritie: "/etc/kibana/http_ca.crt"
+
+#logstash
+logstash_version: '8.x'
+logstash_elasticsearch_hosts: https://es.internal-infra360.io:9200
+elasticsearch_logstash_user: elastic
+elasticsearch_logstash_password: 960HsZSn3odA
+elasticsearch_logstash_cert: /etc/logstash/ca.crt
+
+# filebeat
+filebeat_version: 8.x
+logstash_hosts: logstash.internal-infra360.io:5044
+
+
+
+
+#Certs Variables
+local_certs_dir: /tmp
+
+elasticsearch_certs_dir:  /etc/elasticsearch/certs
+elasticsearch_ca_filename: http_ca.crt
+
+kibana_cert_dir: /etc/kibana/
+kibana_ca_filename: http_ca.crt
+
+logstash_cert_dir: /etc/logstash/
+logstash_ca_filename: ca.crt
+
+# apm_version '8.x'
+elastic_apm_server_repository: "deb https://artifacts.elastic.co/packages/8.x/apt stable main"
+elastic_apm_server_oss_repository: "deb https://artifacts.elastic.co/packages/oss-8.x/apt stable main"
+apm_server_host : localhost:8200
+elasticsearch_hosts: http://es.internal-infra360.io:9200
