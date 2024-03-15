@@ -1,0 +1,4 @@
+---
+- src: git+ssh://git@github.com/infra360io/ansible-roles.git
+  # path: roles
+  name: roles
