@@ -1,0 +1,24 @@
+# Local .terraform directories
+**/.terraform/*
+*.tfstate*
+**/tfplan.json
+*.secrets.tf
+.terraform.lock.hcl
+.terraform/
+**/inspec.lock
+*.gem
+Gemfile.lock
+terraform.tfstate.d/
+eks-admin-cluster-role-binding.yaml
+eks-admin-service-account.yaml
+.idea/
+*.iml
+config-map-aws-auth*.yaml
+kubeconfig_*
+*.swp
+*tfplan.binary
+*sumologic*.yaml
+.envrc
+.DS_Store
+**/.infracost
+roles
