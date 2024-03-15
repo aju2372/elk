@@ -1,0 +1,52 @@
+---
+# - hosts: _infra360io_elasticsearch_prod
+#   become: yes
+#   become_user: root
+#   become_method: sudo
+#   roles:
+#     - java
+
+- hosts: _infra360io_elasticsearch_prod
+  become: yes
+  become_user: root
+  become_method: sudo
+  vars_files:
+    - ./vars/vars.yml
+  roles:
+    - ../ansible-roles/elasticsearch8.x_java/
+
+- hosts: _infra360io_kibana_prod
+  become: yes
+  become_user: root
+  become_method: sudo
+  vars_files:
+    - ./vars/vars.yml
+  roles:
+    - ../ansible-roles/kibana/
+
+# - hosts: _infra360io_elasticsearch_prod
+#   become: yes
+#   become_user: root
+#   become_method: sudo
+#   vars_files:
+#     - ./vars/vars.yml
+#   roles:
+#     - ../ansible-roles/apm-server/
+
+- hosts: _infra360io_kibana_prod
+  become: yes
+  become_user: root
+  become_method: sudo
+  vars_files:
+    - ./vars/vars.yml
+  roles:
+    - ../ansible-roles/filebeat/
+
+- hosts: _infra360io_logstash_prod
+  become: yes
+  become_user: root
+  become_method: sudo
+  vars_files:
+    - ./vars/vars.yml
+  roles:
+    - ../ansible-roles/logstash
